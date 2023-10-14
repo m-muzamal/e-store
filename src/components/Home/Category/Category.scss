@@ -1,0 +1,79 @@
+@import "../../../css-config/mixins.scss";
+
+@import "../../../css-config/mixins.scss";
+
+.shop-by-category{
+    margin: 25px 0;
+    @include md {
+        margin: 50px 0;
+    }
+    .sec-heading {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        @include md {
+            margin-bottom: 35px;
+            font-size: 24px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            margin-top: 5px;
+            width: 50px;
+            height: 3px;
+            background-color: #8e2de2;
+            @include md {
+                margin-top: 10px;
+            }
+        }
+    }
+    .categories {
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+        text-align: center;
+        .category {
+            width: calc(50% - 5px);
+            cursor: pointer;
+            overflow: hidden;
+            @include md {
+                width: calc(25% - 10px);
+            }
+            .category-content {
+                background-color: rgba(0, 0, 0, 0.1);
+                display: flex;
+                margin-bottom: 10px;
+                padding: 20px;
+                align-items: center;
+                img {
+                    margin: 10px;
+                    width: 100%;
+                    transition: all ease 0.3s;
+                    display: block;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                    mix-blend-mode: color;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+            .name {
+                font-size: 14px;
+                display: block;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                // color: white;
+                text-transform: uppercase;
+                @include md {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
