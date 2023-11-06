@@ -1,21 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./admin.scss";
 
 function Admin() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [about, setAbout] = useState("");
-  const [category, setCategory] = useState("Men's Clothing");
+  const [category, setCategory] = useState("men's clothing");
   const [image, setImage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name);
-    console.log(price);
-    console.log(about);
-    console.log(category);
-    console.log(image);
+
+    fetch("https://fakestoreapi.com/products", {
+      method: "POST",
+      body: JSON.stringify({
+        title: name,
+        price: price,
+        description: about,
+        image: image,
+        category: category,
+      }),
+    })
+      .then((res) => {
+        alert("Product added successfully!");
+        setName("");
+        setPrice("");
+        setAbout("");
+        setImage("");
+        setCategory("");
+        return res.json();
+      })
+      .then((json) => console.log(json))
+      .catch((err) => console.log(err));
   };
+
   return (
     <div className="container">
       <form className="content" onSubmit={handleSubmit}>
@@ -54,10 +72,10 @@ function Admin() {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="Men's Clothing">Men's Clothing</option>
-                <option value="Women's Clothing">Women's Clothing</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Jewlerey">Jewlerey</option>
+                <option value="men's clothing">Men's Clothing</option>
+                <option value="women's clothing">Women's Clothing</option>
+                <option value="electronics">Electronics</option>
+                <option value="jewelery">Jewelery</option>
               </select>
             </div>
             <div className="inputs">

@@ -17,7 +17,6 @@ const SingleProduct = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
       setProduct(data);
     } catch (error) {
       console.log(error);

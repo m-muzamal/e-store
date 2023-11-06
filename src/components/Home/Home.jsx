@@ -16,7 +16,6 @@ const Home = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data)
       setCategories(data);
     } catch (error) {
       console.log(error);
@@ -27,7 +26,6 @@ const Home = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
       setProducts(data);
     } catch (error) {
       console.log(error);

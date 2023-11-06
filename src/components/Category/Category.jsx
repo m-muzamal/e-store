@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const Category = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams("");
-  console.log(category);
 
   let api = `https://fakestoreapi.com/products/category/${category}`;
 
