@@ -37,20 +37,6 @@ body{
                 font-weight: 600;
                 text-transform: uppercase;
                 cursor: pointer;
-                &:hover {
-                    color: #8e2de2;
-                }
-            }
-            a {
-                color: white;
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 600;
-                text-transform: uppercase;
-                cursor: pointer;
-                &:hover {
-                    color: #8e2de2;
-                }
             }
         }
         .center {
@@ -77,9 +63,6 @@ body{
                 @include md {
                     font-size: 24px;
                 }
-            }
-            svg:hover {
-                color: gray;
             }
             .cart-icon {
                 position: relative;

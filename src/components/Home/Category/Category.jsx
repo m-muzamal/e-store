@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import "./Category.scss";
 
 const Category = ({ products }) => {
   const uniqueCategories = [...new Set(products.map((item) => item.category))];
+  const navigate = useNavigate()
 
   return (
-    <div className="shop-by-category">
+    <div id="category" className="shop-by-category">
       <h1 className="sec-heading">Categories</h1>
       <div className="categories">
         {uniqueCategories.map((category, index) => {
@@ -12,7 +14,7 @@ const Category = ({ products }) => {
             (item) => item.category === category
           );
           return (
-            <div key={index} className="category">
+            <div key={index} className="category" onClick={() => navigate("/category/" + category)}>
               <div className="category-content">
                 <img src={firstProductWithCategory.image} alt="img" />
               </div>

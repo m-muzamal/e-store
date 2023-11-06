@@ -24,16 +24,13 @@
             position: relative;
             z-index: 9;
             width: 200px;
-            height: 100%;
             margin-bottom: 20px;
             @include md {
                 width: 500px;
                 margin-right: 60px;
                 margin-top: 50px;
-                margin-bottom: 50px;
-                aspect-ratio: 1/2;
-                object-fit: contain;
-            }   
+                margin-bottom: 0;
+            }
         }
         .text-content {
             color: white;

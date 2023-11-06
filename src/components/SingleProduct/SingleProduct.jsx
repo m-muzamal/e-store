@@ -7,8 +7,9 @@ import { Context } from "../../utlis/context";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1)
-  const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { id } = useParams();
+  
   let api = `https://fakestoreapi.com/products/${id}`
   const { handlAddToCart } = useContext(Context)
 

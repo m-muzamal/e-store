@@ -1,0 +1,66 @@
+@import "../../../css-config/mixins.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .login-container {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 100px 0px;
+    @include md {
+        width: 50%;
+        margin: 100px;
+      }
+    h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        display: block;
+        width: 50%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        outline: none;
+        font-size: 16px;
+      }
+      button {
+        margin-top: 5px;
+        outline: 0;
+        border: 0;
+        height: 40px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        background-color: #8e2de2;
+        border-bottom: 3px solid #8e2de2;
+        @include md {
+          width: 120px;
+        }
+      }
+      button:hover {
+        font-size: 14px;
+        background-color: #6516aa;
+      }
+      p {
+        color: gray;
+        font-size: 12px;
+        // margin-top: 5px;
+        cursor: default;
+      }
+    }
+  }
+}
